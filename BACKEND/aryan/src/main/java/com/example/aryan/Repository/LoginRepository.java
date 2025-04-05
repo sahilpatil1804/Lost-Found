@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.example.aryan.Model.Login;
 
 @Repository
-public interface LoginRepository extends JpaRepository<Login, Long> {
+public interface LoginRepository extends JpaRepository<Login, String> {
     Login findByUsername(String username);
-    Login findByEmail(String email); // Added method to find by email
+    Login findByEmail(String email); 
 }

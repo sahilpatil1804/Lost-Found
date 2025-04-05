@@ -89,9 +89,56 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-
-        {isAuthenticated ? (<Link to="/browse" className="nav-link" onClick={toggleMobileMenu}>Browse</Link>) :
-        (<Link to="/" className="nav-link" onClick={toggleMobileMenu}>Browse</Link>)}
+        <div 
+          className={`dropdown ${isMobileReportOpen ? 'mobile-active' : ''}`}
+        >
+          <span 
+            className="dropbtn" 
+            onClick={toggleMobileReport}
+          >
+            Browse
+          </span>
+          <ul className="dropdown-content">
+            <li>
+              {isAuthenticated ? (
+                <Link 
+                to="/browse-lost-items" 
+                className="dropdown-link"
+                onClick={toggleMobileMenu}
+              >
+                Lost Item
+              </Link>
+              ):(
+                <Link 
+                to="/" 
+                className="dropdown-link"
+                onClick={toggleMobileMenu}
+              >
+                Lost Item
+              </Link>
+              )}
+            </li>
+            <li>
+              {isAuthenticated ? (
+                <Link 
+                to="/browse-found-items" 
+                className="dropdown-link"
+                onClick={toggleMobileMenu}
+              >
+                Found Item
+              </Link>
+              ):(
+                <Link 
+                to="/" 
+                className="dropdown-link"
+                onClick={toggleMobileMenu}
+              >
+                Found Item
+              </Link>
+              )}
+            </li>
+          </ul>
+        </div>
         {isAuthenticated ? (<Link to="/my-reports" className="nav-link" onClick={toggleMobileMenu}>My Reports</Link>) : (<Link to="/" className="nav-link" onClick={toggleMobileMenu}>My Reports</Link>)}
         {isAuthenticated ? ( <Link to="/logout" className="nav-link" onClick={()=>dispatch(logout())}>Log Out</Link>):( <Link to="/" className="nav-link" onClick={toggleMobileMenu}>Log In</Link>)}
       </nav>

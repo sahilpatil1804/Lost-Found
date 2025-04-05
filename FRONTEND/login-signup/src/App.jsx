@@ -8,7 +8,7 @@ import { AppProvider } from "./Components/Context/Context"; // Importing Context
 import ReportFoundItem from "./Components/Report/ReportFoundItem";
 import { Provider, useSelector } from "react-redux";
 import { store } from "./redux/store";
-
+import Browse from "./Components/Browse/Browse";
 
 const ProtectedRoute = ({ element }) => {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
@@ -27,6 +27,8 @@ function App() {
           <Route path="/" element={<LoginSignUp />} />
           <Route path="/report-lost-item" element={<ProtectedRoute element={<ReportLostItem />} />} />
           <Route path="report-found-item" element={<ProtectedRoute element={<ReportFoundItem />} />} />
+          <Route path="/browse-lost-items" element={<Browse />} />
+          <Route path="/browse-found-items" element={<Browse />} />
           <Route path="/home" element={<Home />} />
         </Routes>
       </Router>
