@@ -152,7 +152,7 @@ const Home = () => {
             {(activeTab === "lost" ? lostData : foundData).map((item) => (
               <div key={item.id} className="carousel-item">
                 <Link 
-                  to={`/${activeTab === "lost" ? "lostitem" : "founditem"}/${item.id}`} 
+                  to={`/item/${activeTab === "lost" ? "lostitem" : "founditem"}/${item.id}`} 
                   className="carousel-item-link"
                 >
                   <div className="carousel-item-image">

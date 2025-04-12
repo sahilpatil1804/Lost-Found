@@ -1,0 +1,73 @@
+.recent-items-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.recent-items-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex: 1;
+}
+
+.recent-item {
+  display: flex;
+  background-color: var(--light-gray);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.recent-item:hover {
+  transform: translateY(-3px);
+}
+
+.item-image {
+  width: 80px;
+  height: 80px;
+  background-color: var(--medium-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-light);
+  font-size: 20px;
+}
+
+.item-details {
+  padding: 10px;
+  flex: 1;
+}
+
+.item-title {
+  margin: 0 0 5px 0;
+  font-size: 16px;
+  color: var(--text-dark);
+}
+
+.item-status {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.item-status.found {
+  background-color: rgba(76, 175, 80, 0.2);
+  color: #2e7d32;
+}
+
+.item-status.lost {
+  background-color: rgba(255, 152, 0, 0.2);
+  color: #ef6c00;
+}
+
+.item-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--text-light);
+}

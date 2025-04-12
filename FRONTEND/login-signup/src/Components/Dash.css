@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+}
+
+:root {
+  --primary-blue: #1976d2;
+  --primary-light-blue: #e3f2fd;
+  --primary-dark-blue: #154c9d;
+  --white: #ffffff;
+  --light-gray: #f5f5f5;
+  --medium-gray: #e0e0e0;
+  --text-dark: #333333;
+  --text-light: #757575;
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: var(--light-gray);
+}
+
+.content-container {
+  display: flex;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .main-content.sidebar-open {
+    margin-left: 250px;
+  }
+}

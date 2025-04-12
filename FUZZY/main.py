@@ -162,7 +162,7 @@ async def find_matches(db: Session = Depends(get_db)):
             if compare("location_lost"): match_score += 1  # Compares with location_found
 
             # If match score meets threshold
-            if match_score >= 1:
+            if match_score >= 3:
                 # Convert ORM objects to dictionaries
                 lost_dict = {k: v for k, v in lost_item.__dict__.items() if not k.startswith("_")}
                 found_dict = {k: v for k, v in found_item.__dict__.items() if not k.startswith("_")}

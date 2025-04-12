@@ -9,6 +9,8 @@ import ReportFoundItem from "./Components/Report/ReportFoundItem";
 import { Provider, useSelector } from "react-redux";
 import { store } from "./redux/store";
 import Browse from "./Components/Browse/Browse";
+import Dash from "./Components/Dash";
+import Card from "./Components/Card/Card";
 
 const ProtectedRoute = ({ element }) => {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
@@ -30,7 +32,9 @@ function App() {
           <Route path="/browse-lost-items" element={<Browse />} />
           <Route path="/browse-found-items" element={<Browse />} />
           <Route path="/home" element={<Home />} />
-        </Routes>
+          <Route path="/dashboard" element={<Dash/>}/>
+          <Route path="/item/:type/:id" element={<Card />} />
+        </Routes> 
       </Router>
       </Provider>
     </AppProvider>

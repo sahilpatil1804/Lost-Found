@@ -118,7 +118,6 @@ const LoginSignUp = () => {
       <div className="login-form">
         <div className="header">
           <div className="text">{action}</div>
-          <div className="underline"></div>
         </div>
         
         <form onSubmit={action === "Login" ? handleOnSubmitLogin : handleOnSubmitSignUp}>

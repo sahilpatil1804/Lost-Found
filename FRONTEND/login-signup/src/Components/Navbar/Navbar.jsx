@@ -139,7 +139,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        {isAuthenticated ? (<Link to="/my-reports" className="nav-link" onClick={toggleMobileMenu}>My Reports</Link>) : (<Link to="/" className="nav-link" onClick={toggleMobileMenu}>My Reports</Link>)}
+        {isAuthenticated ? (<Link to="/dashboard" className="nav-link" onClick={toggleMobileMenu}>Dashboard</Link>) : (<Link to="/" className="nav-link" onClick={toggleMobileMenu}>Dashboard</Link>)}
         {isAuthenticated ? ( <Link to="/logout" className="nav-link" onClick={()=>dispatch(logout())}>Log Out</Link>):( <Link to="/" className="nav-link" onClick={toggleMobileMenu}>Log In</Link>)}
       </nav>
     </header>
