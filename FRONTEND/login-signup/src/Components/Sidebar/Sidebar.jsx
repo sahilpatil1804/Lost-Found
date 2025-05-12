@@ -5,8 +5,11 @@ import {
   FaPaperPlane, FaComments, FaUserEdit, 
   FaCog, FaQuestionCircle, FaSignOutAlt 
 } from 'react-icons/fa';
+import { Link , useNavigate} from 'react-router-dom';
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
+  const navigate = useNavigate();
+  const isActive = (path) => location.pathname === path;
   return (
     <aside className={`sidebar ${isOpen ? 'open' : ''}`}>
       <div className="sidebar-header">
@@ -18,20 +21,21 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
       <div className="sidebar-content">
         <nav className="sidebar-menu">
           <ul>
-            <li className="active">
-              <FaHome className="menu-icon" />
-              <span>Dashboard</span>
+            <li className={isActive('/dashboard') ? 'active' : ''} onClick={()=>navigate('/dashboard')}>
+                <FaHome className="menu-icon" />
+                <span>Dashboard</span>
+          
             </li>
             <li>
               <FaHistory className="menu-icon" />
               <span>History</span>
             </li>
-            <li>
+            <li className={isActive('/dashboard/incoming') ? 'active' : ''} onClick={()=>navigate('/dashboard/incoming')}>
               <FaInbox className="menu-icon" />
               <span>Incoming Requests</span>
               <span className="menu-badge">3</span>
             </li>
-            <li>
+            <li className={isActive('/dashboard/outgoing') ? 'active' : ''} onClick={()=>navigate('/dashboard/outgoing')}>
               <FaPaperPlane className="menu-icon" />
               <span>Outgoing Requests</span>
             </li>

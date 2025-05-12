@@ -11,6 +11,7 @@ import { store } from "./redux/store";
 import Browse from "./Components/Browse/Browse";
 import Dash from "./Components/Dash";
 import Card from "./Components/Card/Card";
+import Userx from "./Components/User/User";
 
 const ProtectedRoute = ({ element }) => {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
@@ -32,8 +33,9 @@ function App() {
           <Route path="/browse-lost-items" element={<Browse />} />
           <Route path="/browse-found-items" element={<Browse />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/dashboard" element={<Dash/>}/>
+          <Route path="/dashboard/*" element={<Dash/>}/>
           <Route path="/item/:type/:id" element={<Card />} />
+          <Route path="/user/:email" element={<Userx />} />
         </Routes> 
       </Router>
       </Provider>

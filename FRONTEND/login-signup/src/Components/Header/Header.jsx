@@ -21,10 +21,10 @@ const Header = ({ toggleSidebar }) => {
           <span className="notification-badge">5</span>
         </button>
         <div className="user-profile">
-          <div className="user-avatar">
+          <div className="user-avatar" style={{height: "35px", width: "35px"}} >
             <FaUser />
           </div>
-          <span className="user-name">John Doe</span>
+          <span className="user-name" style={{color: "white"}}>John Doe</span>
         </div>
       </div>
     </header>
